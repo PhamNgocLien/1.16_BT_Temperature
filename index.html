@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temperature</title>
+</head>
+<body>
+<script>
+    let Temperature = function (temperatureValue) {
+        this.temperature = temperatureValue;
+        this.getTemperature = function () {
+            return temperatureValue;
+        }
+        this.setTemperature = function (temperatureValue) {
+            this.temperature = temperatureValue;
+        }
+        this.convertToF = function () {
+            return 9/5*temperatureValue+32;
+        }
+        this.convertToK = function () {
+            return temperatureValue+273.15;
+        }
+    }
+
+    let temperature = new Temperature(25);
+    let temperatureValue = temperature.getTemperature();
+    let F = temperature.convertToF();
+    let K = temperature.convertToK();
+    alert(temperatureValue + " độ C = " + F + " độ F, " + K + " độ K");
+</script>
+</body>
+</html>
